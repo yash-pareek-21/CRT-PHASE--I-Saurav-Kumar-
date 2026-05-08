@@ -17,7 +17,7 @@ public:
         age = a;
     }
 
-    // Virtual Function
+    // Virtual Funtion
     virtual void role() {
         cout << name << " is a part of the college." << endl;
     }
