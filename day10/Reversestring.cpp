@@ -1,0 +1,34 @@
+//write a function that reverses a string. the input string is given as an array of characters s.
+//yuo must do this by modifying the input array in-place with 0(1) extra memory.
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int left = 0;
+        int right = s.size() - 1;
+
+        while (left < right) {
+            swap(s[left], s[right]);
+            left++;
+            right--;
+        }
+    }
+};
+
+int main() {
+    vector<char> s = {'h', 'e', 'l', 'l', 'o'};
+
+    Solution obj;
+    obj.reverseString(s);
+
+    for (char ch : s) {
+        cout << ch << " ";
+    }
+
+    return 0;
+}

@@ -1,0 +1,12 @@
+method/functions of String >>>>
+
+length()>>>> tells length of the string
+append()>>>>> add characters in string
+empty() or is emptyh() >>>>> tells string empty or not
+concate()>>>> adding strings
+push_back()>>>>
+pop_back()>>>>
+find()>>>>
+swap()>>>>
+substr()>>>> breaks a string input parts 
+getline()>>>>> whole input 
