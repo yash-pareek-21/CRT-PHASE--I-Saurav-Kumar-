@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhawani Shankar Pareek — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f2d4a;
+      --navy-mid: #1a4166;
+      --gold: #c9933a;
+      --gold-light: #e8b96a;
+      --cream: #fdf8f2;
+      --off-white: #f5efe6;
+      --text: #1c2b3a;
+      --muted: #6b7e8f;
+      --card-bg: #ffffff;
+      --border: #e2d9cc;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 60%, #0d3a5c 100%);
+      padding: 48px 24px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(201,147,58,0.12);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: white;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(201,147,58,0.4);
+      position: relative; z-index: 1;
+      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      position: relative; z-index: 1;
+      animation: slideUp 0.5s 0.1s ease both;
+    }
+    .hero-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      position: relative; z-index: 1;
+      animation: slideUp 0.5s 0.2s ease both;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 20px;
+      position: relative; z-index: 1;
+      animation: slideUp 0.5s 0.3s ease both;
+    }
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 30px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+    .contact-pill:active { background: rgba(255,255,255,0.15); }
+    .contact-pill .icon {
+      width: 20px; height: 20px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 10px;
+    }
+
+    .content {
+      padding: 0 16px;
+      margin-top: -1px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 16px;
+      box-shadow: 0 2px 12px rgba(15,45,74,0.07);
+      border: 1px solid var(--border);
+      animation: fadeCard 0.5s ease both;
+    }
+    @keyframes fadeCard {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.15s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.25s; }
+    .card:nth-child(5) { animation-delay: 0.3s; }
+    .card:nth-child(6) { animation-delay: 0.35s; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .objective-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+    .exp-company {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .exp-badge {
+      background: var(--navy);
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .exp-meta {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .exp-meta span {
+      background: var(--off-white);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .bullet-list li {
+      display: flex;
+      gap: 10px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .bullet-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .edu-item { margin-bottom: 14px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--navy);
+    }
+    .edu-inst {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .edu-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 10px 0;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-chip {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 7px 14px;
+      border-radius: 30px;
+      letter-spacing: 0.2px;
+    }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .mini-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 2px 12px rgba(15,45,74,0.07);
+      border: 1px solid var(--border);
+      animation: fadeCard 0.5s 0.3s ease both;
+    }
+    .lang-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13.5px; font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .lang-item:last-child { margin-bottom: 0; }
+    .lang-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+    .interest-item {
+      font-size: 12.5px;
+      color: var(--text);
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .interest-item::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--gold);
+      font-size: 11px;
+    }
+
+    .declaration-text {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .sign-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .sign-box {
+      border-top: 1.5px solid var(--navy);
+      padding-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      min-width: 120px;
+    }
+    .sign-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      border-top: 1.5px solid var(--navy);
+      padding-top: 6px;
+    }
+
+    .fab {
+      position: fixed;
+      bottom: 24px; right: 20px;
+      background: var(--gold);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 22px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(201,147,58,0.5);
+      display: flex; align-items: center; gap: 8px;
+      z-index: 100;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .fab:active { transform: scale(0.96); box-shadow: 0 3px 12px rgba(201,147,58,0.4); }
+
+    @media print {
+      .fab { display: none; }
+      body { background: white; padding: 0; }
+      .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .card, .mini-card { box-shadow: none; border: 1px solid #ddd; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="avatar">B</div>
+    <div class="hero-name">Bhawani Shankar Pareek</div>
+    <div class="hero-role">Sales Executive</div>
+    <div class="contact-row">
+      <a href="tel:9828287618" class="contact-pill">
+        <span class="icon">📞</span> 9828287618
+      </a>
+      <a href="mailto:BHAWANIPAREEK32@GMAIL.COM" class="contact-pill">
+        <span class="icon">✉</span> bhawanipareek32@gmail.com
+      </a>
+      <div class="contact-pill">
+        <span class="icon">📍</span> Jhotwara, Jaipur, Rajasthan
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="card">
+      <div class="section-label">Career Objective</div>
+      <p class="objective-text">
+        Results-driven sales professional with 3+ years of experience in a DSA firm, specializing in customer handling, lead follow-up, and sales coordination. Seeking a <strong>Sales Executive</strong> role to apply my field experience and communication skills in driving business growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="section-label">Work Experience</div>
+      <div class="exp-header">
+        <div class="exp-company">Ranbanka Associates</div>
+        <div class="exp-badge">3 Years</div>
+      </div>
+      <div class="exp-meta">
+        <span>DSA Firm</span>
+        <span>Jaipur, Rajasthan</span>
+        <span>Experience Cert. Available</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Managed customer communication and end-to-end sales coordination</li>
+        <li>Built and maintained strong client relationships to drive business growth</li>
+        <li>Coordinated with internal teams for smooth transaction processing</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="section-label">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">12th Standard</div>
+        <div class="edu-inst">RBSE Board, Rajasthan</div>
+      </div>
+      <div class="edu-divider"></div>
+      <div class="edu-item">
+        <div class="edu-degree">GP Rating — Marine Course</div>
+        <div class="edu-inst">Marine Training Institute</div>
+      </div>
+      <div class="edu-divider"></div>
+      <div class="edu-item">
+        <div class="edu-degree">HTCW Course</div>
+        <div class="edu-inst">Certified Training</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-label">Core Skills</div>
+      <div class="skills-grid">
+        <span class="skill-chip">Customer Handling</span>
+        <span class="skill-chip">Sales Coordination</span>
+        <span class="skill-chip">Lead Follow-up</span>
+        <span class="skill-chip">Relationship Management</span>
+        <span class="skill-chip">Team Collaboration</span>
+        <span class="skill-chip">Time Management</span>
+        <span class="skill-chip">Field Work</span>
+        <span class="skill-chip">Communication</span>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="mini-card">
+        <div class="section-label">Languages</div>
+        <div class="lang-item"><div class="lang-dot"></div> Hindi</div>
+        <div class="lang-item"><div class="lang-dot"></div> English</div>
+      </div>
+      <div class="mini-card">
+        <div class="section-label">Interests</div>
+        <div class="interest-item">Sales techniques</div>
+        <div class="interest-item">Networking with people</div>
+        <div class="interest-item">Travel & field work</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-label">Declaration</div>
+      <p class="declaration-text">
+        I hereby declare that the above information is true and correct to the best of my knowledge and belief.
+      </p>
+      <div class="sign-row">
+        <div class="sign-box">Place: Jaipur<br>Date: ___________</div>
+        <div class="sign-name">Bhawani Shankar Pareek</div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="fab" onclick="window.print()">🖨 Save / Print</button>
+
+</body>
+</html>
